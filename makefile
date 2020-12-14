@@ -1,4 +1,4 @@
-PIO_TOOLCHAINS=~/.platformio/packages
+PIO_TOOLCHAINS=/home/${USER}/.platformio/packages
 TOOLCHAIN_NAME=toolchain-gccarmnoneeabi@10.1.1
 TARGET=${PIO_TOOLCHAINS}/${TOOLCHAIN_NAME}
 
@@ -23,4 +23,3 @@ replicate:
 fix:
 	echo Copying Cortex-Mx math libraries...
 	cp ./addons/** ${TARGET}/${LIB_PATH}
-
