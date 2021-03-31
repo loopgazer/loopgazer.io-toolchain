@@ -360,8 +360,23 @@ that the test executable writes to <samp>stdout</samp> and <samp>stderr</samp>.
 </p></dd>
 </dl>
 
+<a name="Specify-environment-variables-for-a-test"></a>
+<h4 class="subsubsection">7.2.1.9 Specify environment variables for a test</h4>
+
+<dl compact="compact">
+<dt><code>{ dg-set-compiler-env-var <var>var_name</var> &quot;<var>var_value</var>&quot; }</code></dt>
+<dd><p>Specify that the environment variable <var>var_name</var> needs to be set
+to <var>var_value</var> before invoking the compiler on the test file.
+</p>
+</dd>
+<dt><code>{ dg-set-target-env-var <var>var_name</var> &quot;<var>var_value</var>&quot; }</code></dt>
+<dd><p>Specify that the environment variable <var>var_name</var> needs to be set
+to <var>var_value</var> before execution of the program created by the test.
+</p></dd>
+</dl>
+
 <a name="Specify-additional-files-for-a-test"></a>
-<h4 class="subsubsection">7.2.1.9 Specify additional files for a test</h4>
+<h4 class="subsubsection">7.2.1.10 Specify additional files for a test</h4>
 
 <dl compact="compact">
 <dt><code>{ dg-additional-files &quot;<var>filelist</var>&quot; }</code></dt>
@@ -376,7 +391,7 @@ following the main test file.
 </dl>
 
 <a name="Add-checks-at-the-end-of-a-test"></a>
-<h4 class="subsubsection">7.2.1.10 Add checks at the end of a test</h4>
+<h4 class="subsubsection">7.2.1.11 Add checks at the end of a test</h4>
 
 <dl compact="compact">
 <dt><code>{ dg-final { <var>local-directive</var> } }</code></dt>

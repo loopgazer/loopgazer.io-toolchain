@@ -319,14 +319,14 @@ all the regular expressions (separated by a semi-colon).
 of all files that are located in <samp>/usr/</samp> folder.
 </p>
 </dd>
-<dt><code>-fprofile-reproducible</code></dt>
+<dt><code>-fprofile-reproducible=<span class="roman">[</span>multithreaded<span class="roman">|</span>parallel-runs<span class="roman">|</span>serial<span class="roman">]</span></code></dt>
 <dd><a name="index-fprofile_002dreproducible"></a>
 <p>Control level of reproducibility of profile gathered by
 <code>-fprofile-generate</code>.  This makes it possible to rebuild program
 with same outcome which is useful, for example, for distribution
 packages.
 </p>
-<p>With <samp>-fprofile-reproducibility=serial</samp> the profile gathered by
+<p>With <samp>-fprofile-reproducible=serial</samp> the profile gathered by
 <samp>-fprofile-generate</samp> is reproducible provided the trained program
 behaves the same at each invocation of the train run, it is not
 multi-threaded and profile data streaming is always done in the same
@@ -341,7 +341,7 @@ Such non-reproducible part of programs may be annotated by
 <samp>-l</samp> can be used to dump gathered data and verify that they are
 indeed reproducible.
 </p>
-<p>With <samp>-fprofile-reproducibility=parallel-runs</samp> collected profile
+<p>With <samp>-fprofile-reproducible=parallel-runs</samp> collected profile
 stays reproducible regardless the order of streaming of the data into
 gcda files.  This setting makes it possible to run multiple instances of
 instrumented program in parallel (such as with <code>make -j</code>). This
@@ -709,7 +709,7 @@ operand constant, <code>__sanitizer_cov_trace_cmpf</code> or
 <code>__sanitizer_cov_trace_switch</code> for switch statements.
 </p>
 </dd>
-<dt><code>-fcf-protection=<span class="roman">[</span>full<span class="roman">|</span>branch<span class="roman">|</span>return<span class="roman">|</span>none<span class="roman">]</span></code></dt>
+<dt><code>-fcf-protection=<span class="roman">[</span>full<span class="roman">|</span>branch<span class="roman">|</span>return<span class="roman">|</span>none<span class="roman">|</span>check<span class="roman">]</span></code></dt>
 <dd><a name="index-fcf_002dprotection"></a>
 <p>Enable code instrumentation of control-flow transfers to increase
 program security by checking that target addresses of control-flow
@@ -726,6 +726,11 @@ implements checking of validity at the point of returning from a
 function.  The value <code>full</code> is an alias for specifying both
 <code>branch</code> and <code>return</code>. The value <code>none</code> turns off
 instrumentation.
+</p>
+<p>The value <code>check</code> is used for the final link with link-time
+optimization (LTO).  An error is issued if LTO object files are
+compiled with different <samp>-fcf-protection</samp> values.  The
+value <code>check</code> is ignored at the compile time.
 </p>
 <p>The macro <code>__CET__</code> is defined when <samp>-fcf-protection</samp> is
 used.  The first bit of <code>__CET__</code> is set to 1 for the value

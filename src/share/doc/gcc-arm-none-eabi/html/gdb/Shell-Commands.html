@@ -82,9 +82,10 @@ just use the <code>shell</code> command.
 <dt><code>!<var>command-string</var></code></dt>
 <dd><p>Invoke a standard shell to execute <var>command-string</var>.
 Note that no space is needed between <code>!</code> and <var>command-string</var>.
-If it exists, the environment variable <code>SHELL</code> determines which
-shell to run.  Otherwise <small>GDB</small> uses the default shell
-(<samp>/bin/sh</samp> on Unix systems, <samp>COMMAND.COM</samp> on MS-DOS, etc.).
+On GNU and Unix systems, the environment variable <code>SHELL</code>, if it
+exists, determines which shell to run.  Otherwise <small>GDB</small> uses
+the default shell (<samp>/bin/sh</samp> on GNU and Unix systems,
+<samp>cmd.exe</samp> on MS-Windows, <samp>COMMAND.COM</samp> on MS-DOS, etc.).
 </p></dd>
 </dl>
 

@@ -27,7 +27,7 @@ developing GNU and promoting software freedom." -->
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
 <link href="Commands.html#Commands" rel="up" title="Commands">
 <link href="Running.html#Running" rel="next" title="Running">
-<link href="Command-Options.html#Command-Options" rel="prev" title="Command Options">
+<link href="Command-aliases-default-args.html#Command-aliases-default-args" rel="prev" title="Command aliases default args">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -63,11 +63,11 @@ ul.no-bullet {list-style: none}
 <a name="Help"></a>
 <div class="header">
 <p>
-Previous: <a href="Command-Options.html#Command-Options" accesskey="p" rel="prev">Command Options</a>, Up: <a href="Commands.html#Commands" accesskey="u" rel="up">Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="Command-aliases-default-args.html#Command-aliases-default-args" accesskey="p" rel="prev">Command aliases default args</a>, Up: <a href="Commands.html#Commands" accesskey="u" rel="up">Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
 <a name="Getting-Help"></a>
-<h3 class="section">3.5 Getting Help</h3>
+<h3 class="section">3.6 Getting Help</h3>
 <a name="index-online-documentation"></a>
 <a name="index-help"></a>
 
@@ -86,7 +86,7 @@ display a short list of named classes of commands:
 <pre class="smallexample">(gdb) help
 List of classes of commands:
 
-aliases -- Aliases of other commands
+aliases -- User-defined aliases of other commands
 breakpoints -- Making program stop at certain points
 data -- Examining data
 files -- Specifying and examining files
@@ -111,8 +111,11 @@ Command name abbreviations are allowed if unambiguous.
 </dd>
 <dt><code>help <var>class</var></code></dt>
 <dd><p>Using one of the general help classes as an argument, you can get a
-list of the individual commands in that class.  For example, here is the
-help display for the class <code>status</code>:
+list of the individual commands in that class.  If a command has
+aliases, the aliases are given after the command name, separated by
+commas.  If an alias has default arguments, the full definition of
+the alias is given after the first line.
+For example, here is the help display for the class <code>status</code>:
 </p>
 <div class="smallexample">
 <pre class="smallexample">(gdb) help status
@@ -120,9 +123,14 @@ Status inquiries.
 
 List of commands:
 
-info -- Generic command for showing things
+info, inf, i -- Generic command for showing things
         about the program being debugged
-show -- Generic command for showing things
+info address, iamain  -- Describe where symbol SYM is stored.
+  alias iamain = info address main
+info all-registers -- List of all registers and their contents,
+        for selected stack frame.
+...
+show, info set -- Generic command for showing things
         about the debugger
 
 Type &quot;help&quot; followed by command name for full
@@ -134,7 +142,11 @@ Command name abbreviations are allowed if unambiguous.
 </dd>
 <dt><code>help <var>command</var></code></dt>
 <dd><p>With a command name as <code>help</code> argument, <small>GDB</small> displays a
-short paragraph on how to use that command.
+short paragraph on how to use that command.  If that command has
+one or more aliases, <small>GDB</small> will display a first line with
+the command name and all its aliases separated by commas.
+This first line will be followed by the full definition of all aliases
+having default arguments.
 </p>
 <a name="index-apropos"></a>
 </dd>
@@ -154,10 +166,7 @@ matching <var>regexp</var>.  For example:
 </p>
 <div class="smallexample">
 <pre class="smallexample">alias -- Define a new command that is an alias of an existing command
-aliases -- Aliases of other commands
-d -- Delete some breakpoints or auto-display expressions
-del -- Delete some breakpoints or auto-display expressions
-delete -- Delete some breakpoints or auto-display expressions
+aliases -- User-defined aliases of other commands
 </pre></div>
 
 <p>while
@@ -298,7 +307,7 @@ your report.
 <hr>
 <div class="header">
 <p>
-Previous: <a href="Command-Options.html#Command-Options" accesskey="p" rel="prev">Command Options</a>, Up: <a href="Commands.html#Commands" accesskey="u" rel="up">Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="Command-aliases-default-args.html#Command-aliases-default-args" accesskey="p" rel="prev">Command aliases default args</a>, Up: <a href="Commands.html#Commands" accesskey="u" rel="up">Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 
 

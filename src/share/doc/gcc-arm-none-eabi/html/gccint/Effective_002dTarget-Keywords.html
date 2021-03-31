@@ -831,6 +831,17 @@ the M-Profile Vector Extension (MVE). Some multilibs may be incompatible
 with these options.
 </p>
 </dd>
+<dt><code>arm_v8_1m_mve_fp_ok</code></dt>
+<dd><p>ARM target supports options to generate instructions from ARMv8.1-M with
+the Half-precision floating-point instructions (HP), Floating-point Extension
+(FP) along with M-Profile Vector Extension (MVE). Some multilibs may be
+incompatible with these options.
+</p>
+</dd>
+<dt><code>arm_mve_hw</code></dt>
+<dd><p>Test system supports executing MVE instructions.
+</p>
+</dd>
 <dt><code>arm_v8m_main_cde</code></dt>
 <dd><p>ARM target supports options to generate instructions from ARMv8-M with
 the Custom Datapath Extension (CDE). Some multilibs may be incompatible
@@ -956,6 +967,10 @@ whether it does so by default).
 <dd><p>Like <code>aarch64_sve_hw</code>, but also test for an exact hardware vector length.
 </p>
 </dd>
+<dt><code>aarch64_fjcvtzs_hw</code></dt>
+<dd><p>AArch64 target that is able to generate and execute armv8.3-a FJCVTZS
+instruction.
+</p></dd>
 </dl>
 
 <a name="MIPS_002dspecific-attributes"></a>

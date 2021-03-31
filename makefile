@@ -1,5 +1,5 @@
 PIO_TOOLCHAINS=/home/${USER}/.platformio/packages
-TOOLCHAIN_NAME=toolchain-gccarmnoneeabi@10.1.1
+TOOLCHAIN_NAME=toolchain-gccarmnoneeabi@10.2
 LIB_PATH=arm-none-eabi/lib
 TARGET=${PIO_TOOLCHAINS}/${TOOLCHAIN_NAME}
 

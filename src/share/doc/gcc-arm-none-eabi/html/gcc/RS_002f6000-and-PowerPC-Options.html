@@ -198,7 +198,8 @@ following options:
 -mpowerpc-gpopt  -mpowerpc-gfxopt 
 -mmulhw  -mdlmzb  -mmfpgpr  -mvsx 
 -mcrypto  -mhtm  -mpower8-fusion  -mpower8-vector 
--mquad-memory  -mquad-memory-atomic  -mfloat128  -mfloat128-hardware
+-mquad-memory  -mquad-memory-atomic  -mfloat128 
+-mfloat128-hardware -mprefixed -mpcrel -mmma
 </pre></div>
 
 <p>The particular options set for any particular CPU varies between
@@ -1306,6 +1307,14 @@ addressing (<samp>-mprefixed</samp>) options are enabled.
 <a name="index-mno_002dprefixed"></a>
 <p>Generate (do not generate) addressing modes using prefixed load and
 store instructions when the option <samp>-mcpu=future</samp> is used.
+</p>
+</dd>
+<dt><code>-mmma</code></dt>
+<dt><code>-mno-mma</code></dt>
+<dd><a name="index-mmma"></a>
+<a name="index-mno_002dmma"></a>
+<p>Generate (do not generate) the MMA instructions when the option
+<samp>-mcpu=future</samp> is used.
 </p></dd>
 </dl>
 

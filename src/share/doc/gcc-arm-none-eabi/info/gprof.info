@@ -28,7 +28,7 @@ time.  We assume that you know how to write, compile, and execute
 programs.  GNU 'gprof' was written by Jay Fenlason.
 
    This manual is for 'gprof' (GNU Arm Embedded Toolchain
-10-2020-q2-preview) version 2.34.50.
+10-2020-q4-major) version 2.35.1.
 
    This document is distributed under the terms of the GNU Free
 Documentation License version 1.3.  A copy of the license is included in
@@ -2426,34 +2426,34 @@ their use in free software.
 
 Tag Table:
 Node: Top719
-Node: Introduction2078
-Node: Compiling4569
-Node: Executing8625
-Node: Invoking11413
-Node: Output Options12828
-Node: Analysis Options19920
-Node: Miscellaneous Options23840
-Node: Deprecated Options25094
-Node: Symspecs27157
-Node: Output28983
-Node: Flat Profile30023
-Node: Call Graph34976
-Node: Primary38208
-Node: Callers40796
-Node: Subroutines42914
-Node: Cycles44755
-Node: Line-by-line51532
-Node: Annotated Source55608
-Node: Inaccuracy58606
-Node: Sampling Error58864
-Node: Assumptions61768
-Node: How do I?63238
-Node: Incompatibilities64795
-Node: Details66289
-Node: Implementation66682
-Node: File Format72581
-Node: Internals76869
-Node: Debugging85359
-Node: GNU Free Documentation License86949
+Node: Introduction2075
+Node: Compiling4566
+Node: Executing8622
+Node: Invoking11410
+Node: Output Options12825
+Node: Analysis Options19917
+Node: Miscellaneous Options23837
+Node: Deprecated Options25091
+Node: Symspecs27154
+Node: Output28980
+Node: Flat Profile30020
+Node: Call Graph34973
+Node: Primary38205
+Node: Callers40793
+Node: Subroutines42911
+Node: Cycles44752
+Node: Line-by-line51529
+Node: Annotated Source55605
+Node: Inaccuracy58603
+Node: Sampling Error58861
+Node: Assumptions61765
+Node: How do I?63235
+Node: Incompatibilities64792
+Node: Details66286
+Node: Implementation66679
+Node: File Format72578
+Node: Internals76866
+Node: Debugging85356
+Node: GNU Free Documentation License86946
 
 End Tag Table

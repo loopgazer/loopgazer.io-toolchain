@@ -1,13 +1,13 @@
-# GNU ARM Embedded Toolchain 10
+# GNU ARM Embedded Toolchain 10 for Platform.IO
 
 > **DISCLAIMER**: This experimental toolchain is not meant to be used in production.
 
 This project produces a **Platform.IO** toolchain
 of [GNU ARM Embedded Toolchain 10-2020-q2-preview](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-, providing access to gcc-10.1, and applies fixed for current Cortex M Processors.
+, providing access to gcc-10.2, and applies fixed for current Cortex M Processors.
 
 With a more recent compiler, the `--std=c++20` compiler flag is introduced and enables
-all [C++20 Features](https://en.cppreference.com/w/cpp/compiler_support#cpp20) available in GCC 10.1, e.g:
+all [C++20 Features](https://en.cppreference.com/w/cpp/compiler_support#cpp20) available in GCC 10.2, e.g:
 
 - [Concepts and Constraints](https://en.cppreference.com/w/cpp/language/constraints)
 - [Three-way comparison operator](https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way_comparison)
@@ -30,7 +30,7 @@ After cloning this repository, the makefile located at the project root will hel
 make install
 ```
 
-The `install` task moves the raw toolchain content to `~/.platformio/packages/toolchain-gccarmnoneeabi@10.1.1`
+The `install` task moves the raw toolchain content to `~/.platformio/packages/toolchain-gccarmnoneeabi@10.2`
 from where it is accessible for PlatformIO's CLI.
 
 To further integrate the toolchain, a `package.json` is added.
@@ -38,12 +38,12 @@ To further integrate the toolchain, a `package.json` is added.
 Eventually, the Cortex-related fixes are applied to fully embrace the new (and older) capabilities of many bundled C++
 Standard Library components.
 
-> Note: Once the toolchain is used in any project, the postfix `@10.1.1` is redacted from the toolchain path.
+> Note: Once the toolchain is used in any project, the postfix `@10.2` is redacted from the toolchain path.
 > Therefore, to safely remove the toolchain, you need to use PIO's CLI!
 
 ### PlatformIO Project
 
-After using `make install`ing the toolchain, it may be referenced in a project's `platform.ini`:
+After `make install`ing the toolchain, it may be referenced in a project's `platform.ini`:
 
 ```ini
 # Exemplary PlatformIO configuration
@@ -52,7 +52,7 @@ After using `make install`ing the toolchain, it may be referenced in a project's
 platform = teensy
 board = teensy41
 framework = arduino
-platform_packages = toolchain-gccarmnoneeabi@10.1.1
+platform_packages = toolchain-gccarmnoneeabi@10.2
 
 build_unflags =
     -std=gnu++14
@@ -76,7 +76,7 @@ The Code, which uses idioms from the C++ standard library, requires the linker t
 | `libarm_cortexM4lf_math.a`   | M4, Little endian, Floating Point Unit             |
 | `libarm_cortexM7lfsp_math.a` | M7, Little endian, Single Precision Floating Point |
 
-For example, when using `std::vector`s on a Teensy 4.x, which runs a Cortex-M7, the linker scripts seems to be
+For example, when using `std::vector`s on a Teensy 4.x, which runs a Cortex-M7, the linker seems to be
 missing `libarm_cortexM7lfsp_math.a`.
 
 As a workaround for those cases, the listed archives were extracted

@@ -73,7 +73,8 @@ the <code>.loc</code> directive will add a row to the <code>.debug_line</code> l
 number matrix corresponding to the immediately following assembly
 instruction.  The <var>fileno</var>, <var>lineno</var>, and optional <var>column</var>
 arguments will be applied to the <code>.debug_line</code> state machine before
-the row is added.
+the row is added.  It is an error for the input assembly file to generate
+a non-empty <code>.debug_line</code> and also use <code>loc</code> directives.
 </p>
 <p>The <var>options</var> are a sequence of the following tokens in any order:
 </p>

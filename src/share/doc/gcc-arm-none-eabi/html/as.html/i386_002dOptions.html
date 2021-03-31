@@ -213,6 +213,8 @@ accept various extension mnemonics.  For example,
 <code>movdiri</code>,
 <code>movdir64b</code>,
 <code>enqcmd</code>,
+<code>serialize</code>,
+<code>tsxldtrk</code>,
 <code>avx512f</code>,
 <code>avx512cd</code>,
 <code>avx512er</code>,
@@ -228,6 +230,7 @@ accept various extension mnemonics.  For example,
 <code>avx512_vbmi2</code>,
 <code>avx512_vnni</code>,
 <code>avx512_bitalg</code>,
+<code>avx512_vp2intersect</code>,
 <code>avx512_bf16</code>,
 <code>noavx512f</code>,
 <code>noavx512cd</code>,
@@ -247,6 +250,8 @@ accept various extension mnemonics.  For example,
 <code>noavx512_vp2intersect</code>,
 <code>noavx512_bf16</code>,
 <code>noenqcmd</code>,
+<code>noserialize</code>,
+<code>notsxldtrk</code>,
 <code>vmx</code>,
 <code>vmfunc</code>,
 <code>smx</code>,
@@ -277,6 +282,7 @@ accept various extension mnemonics.  For example,
 <code>cldemote</code>,
 <code>rdpru</code>,
 <code>mcommit</code>,
+<code>sev_es</code>,
 <code>lwp</code>,
 <code>fma4</code>,
 <code>xop</code>,
@@ -423,10 +429,11 @@ with default visibility can be preempted.  The resulting code is
 slightly bigger.  This option only affects the handling of branch
 instructions.
 </p>
+<a name="index-_002dmbig_002dobj-option_002c-i386"></a>
 <a name="index-_002dmbig_002dobj-option_002c-x86_002d64"></a>
 </dd>
 <dt><code>-mbig-obj</code></dt>
-<dd><p>On x86-64 PE/COFF target this option forces the use of big object file
+<dd><p>On PE/COFF target this option forces the use of big object file
 format, which allows more than 32768 sections.
 </p>
 <a name="index-_002dmomit_002dlock_002dprefix_003d-option_002c-i386"></a>
@@ -508,6 +515,56 @@ on an instruction.  It is equivalent to
 <samp>-malign-branch=jcc+fused+jmp</samp>
 <samp>-malign-branch-prefix-size=5</samp>.
 The default doesn&rsquo;t align branches.
+</p>
+<a name="index-_002dmlfence_002dafter_002dload_003d-option_002c-i386"></a>
+<a name="index-_002dmlfence_002dafter_002dload_003d-option_002c-x86_002d64"></a>
+</dd>
+<dt><code>-mlfence-after-load=<var>no</var></code></dt>
+<dt><code>-mlfence-after-load=<var>yes</var></code></dt>
+<dd><p>These options control whether the assembler should generate lfence
+after load instructions.  <samp>-mlfence-after-load=<var>yes</var></samp> will
+generate lfence.  <samp>-mlfence-after-load=<var>no</var></samp> will not generate
+lfence, which is the default.
+</p>
+<a name="index-_002dmlfence_002dbefore_002dindirect_002dbranch_003d-option_002c-i386"></a>
+<a name="index-_002dmlfence_002dbefore_002dindirect_002dbranch_003d-option_002c-x86_002d64"></a>
+</dd>
+<dt><code>-mlfence-before-indirect-branch=<var>none</var></code></dt>
+<dt><code>-mlfence-before-indirect-branch=<var>all</var></code></dt>
+<dt><code>-mlfence-before-indirect-branch=<var>register</var></code></dt>
+<dt><code>-mlfence-before-indirect-branch=<var>memory</var></code></dt>
+<dd><p>These options control whether the assembler should generate lfence
+before indirect near branch instructions.
+<samp>-mlfence-before-indirect-branch=<var>all</var></samp> will generate lfence
+before indirect near branch via register and issue a warning before
+indirect near branch via memory.
+It also implicitly sets <samp>-mlfence-before-ret=<var>shl</var></samp> when
+there&rsquo;s no explict <samp>-mlfence-before-ret=</samp>.
+<samp>-mlfence-before-indirect-branch=<var>register</var></samp> will generate
+lfence before indirect near branch via register.
+<samp>-mlfence-before-indirect-branch=<var>memory</var></samp> will issue a
+warning before indirect near branch via memory.
+<samp>-mlfence-before-indirect-branch=<var>none</var></samp> will not generate
+lfence nor issue warning, which is the default.  Note that lfence won&rsquo;t
+be generated before indirect near branch via register with
+<samp>-mlfence-after-load=<var>yes</var></samp> since lfence will be generated
+after loading branch target register.
+</p>
+<a name="index-_002dmlfence_002dbefore_002dret_003d-option_002c-i386"></a>
+<a name="index-_002dmlfence_002dbefore_002dret_003d-option_002c-x86_002d64"></a>
+</dd>
+<dt><code>-mlfence-before-ret=<var>none</var></code></dt>
+<dt><code>-mlfence-before-ret=<var>shl</var></code></dt>
+<dt><code>-mlfence-before-ret=<var>or</var></code></dt>
+<dt><code>-mlfence-before-ret=<var>yes</var></code></dt>
+<dt><code>-mlfence-before-ret=<var>not</var></code></dt>
+<dd><p>These options control whether the assembler should generate lfence
+before ret.  <samp>-mlfence-before-ret=<var>or</var></samp> will generate
+generate or instruction with lfence.
+<samp>-mlfence-before-ret=<var>shl/yes</var></samp> will generate shl instruction
+with lfence. <samp>-mlfence-before-ret=<var>not</var></samp> will generate not
+instruction with lfence. <samp>-mlfence-before-ret=<var>none</var></samp> will not
+generate lfence, which is the default.
 </p>
 <a name="index-_002dmx86_002dused_002dnote_003d-option_002c-i386"></a>
 <a name="index-_002dmx86_002dused_002dnote_003d-option_002c-x86_002d64"></a>

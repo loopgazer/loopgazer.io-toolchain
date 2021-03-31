@@ -971,10 +971,10 @@ instruction.
 <dt><a name="index-BFD_005fRELOC_005fPPC64_005fDTPREL16_005fHIGHESTA"></a>: <strong>BFD_RELOC_PPC64_DTPREL16_HIGHESTA</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fPPC64_005fTPREL34"></a>: <strong>BFD_RELOC_PPC64_TPREL34</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fPPC64_005fDTPREL34"></a>: <strong>BFD_RELOC_PPC64_DTPREL34</strong></dt>
-<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fTLSGD34"></a>: <strong>BFD_RELOC_PPC64_GOT_TLSGD34</strong></dt>
-<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fTLSLD34"></a>: <strong>BFD_RELOC_PPC64_GOT_TLSLD34</strong></dt>
-<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fTPREL34"></a>: <strong>BFD_RELOC_PPC64_GOT_TPREL34</strong></dt>
-<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fDTPREL34"></a>: <strong>BFD_RELOC_PPC64_GOT_DTPREL34</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fTLSGD_005fPCREL34"></a>: <strong>BFD_RELOC_PPC64_GOT_TLSGD_PCREL34</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fTLSLD_005fPCREL34"></a>: <strong>BFD_RELOC_PPC64_GOT_TLSLD_PCREL34</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fTPREL_005fPCREL34"></a>: <strong>BFD_RELOC_PPC64_GOT_TPREL_PCREL34</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fPPC64_005fGOT_005fDTPREL_005fPCREL34"></a>: <strong>BFD_RELOC_PPC64_GOT_DTPREL_PCREL34</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fPPC64_005fTLS_005fPCREL"></a>: <strong>BFD_RELOC_PPC64_TLS_PCREL</strong></dt>
 <dd><p>PowerPC and PowerPC64 thread-local storage relocations.
 </p></dd></dl>
@@ -3378,6 +3378,8 @@ then it may be truncated to 8 bits.
 <dt><a name="index-BFD_005fRELOC_005fMSP430_005fABS_005fHI16"></a>: <strong>BFD_RELOC_MSP430_ABS_HI16</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fMSP430_005fPREL31"></a>: <strong>BFD_RELOC_MSP430_PREL31</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fMSP430_005fSYM_005fDIFF"></a>: <strong>BFD_RELOC_MSP430_SYM_DIFF</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fMSP430_005fSET_005fULEB128"></a>: <strong>BFD_RELOC_MSP430_SET_ULEB128</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fMSP430_005fSUB_005fULEB128"></a>: <strong>BFD_RELOC_MSP430_SUB_ULEB128</strong></dt>
 <dd><p>msp430 specific relocation codes
 </p></dd></dl>
 <dl>
@@ -3504,7 +3506,9 @@ PLT entries.  Otherwise, this is just a generic 32-bit relocation.
 <dt><a name="index-BFD_005fRELOC_005fXTENSA_005fDIFF8"></a>: <strong>BFD_RELOC_XTENSA_DIFF8</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fXTENSA_005fDIFF16"></a>: <strong>BFD_RELOC_XTENSA_DIFF16</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fXTENSA_005fDIFF32"></a>: <strong>BFD_RELOC_XTENSA_DIFF32</strong></dt>
-<dd><p>Xtensa relocations to mark the difference of two local symbols.
+<dd><p>Xtensa relocations for backward compatibility.  These have been replaced
+by BFD_RELOC_XTENSA_PDIFF and BFD_RELOC_XTENSA_NDIFF.
+Xtensa relocations to mark the difference of two local symbols.
 These are only needed to support linker relaxation and can be ignored
 when not relaxing.  The field is set to the value of the difference
 assuming no relaxation.  The relocation encodes the position of the
@@ -3580,6 +3584,23 @@ BFD_RELOC_XTENSA_ASM_EXPAND.
 <dt><a name="index-BFD_005fRELOC_005fXTENSA_005fTLS_005fARG"></a>: <strong>BFD_RELOC_XTENSA_TLS_ARG</strong></dt>
 <dt><a name="index-BFD_005fRELOC_005fXTENSA_005fTLS_005fCALL"></a>: <strong>BFD_RELOC_XTENSA_TLS_CALL</strong></dt>
 <dd><p>Xtensa TLS relocations.
+</p></dd></dl>
+<dl>
+<dt><a name="index-BFD_005fRELOC_005fXTENSA_005fPDIFF8"></a>: <strong>BFD_RELOC_XTENSA_PDIFF8</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fXTENSA_005fPDIFF16"></a>: <strong>BFD_RELOC_XTENSA_PDIFF16</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fXTENSA_005fPDIFF32"></a>: <strong>BFD_RELOC_XTENSA_PDIFF32</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fXTENSA_005fNDIFF8"></a>: <strong>BFD_RELOC_XTENSA_NDIFF8</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fXTENSA_005fNDIFF16"></a>: <strong>BFD_RELOC_XTENSA_NDIFF16</strong></dt>
+<dt><a name="index-BFD_005fRELOC_005fXTENSA_005fNDIFF32"></a>: <strong>BFD_RELOC_XTENSA_NDIFF32</strong></dt>
+<dd><p>Xtensa relocations to mark the difference of two local symbols.
+These are only needed to support linker relaxation and can be ignored
+when not relaxing.  The field is set to the value of the difference
+assuming no relaxation.  The relocation encodes the position of the
+subtracted symbol so the linker can determine whether to adjust the field
+value.  PDIFF relocations are used for positive differences, NDIFF
+relocations are used for negative differences.  The difference value
+is treated as unsigned with these relocation types, giving full
+8/16 value ranges.
 </p></dd></dl>
 <dl>
 <dt><a name="index-BFD_005fRELOC_005fZ80_005fDISP8"></a>: <strong>BFD_RELOC_Z80_DISP8</strong></dt>

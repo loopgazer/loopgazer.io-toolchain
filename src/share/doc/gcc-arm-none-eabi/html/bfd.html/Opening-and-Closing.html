@@ -666,12 +666,12 @@ filename.  The caller is responsible for freeing this string.
 <h4 class="subsubsection">2.14.1.29 <code>bfd_set_filename</code></h4>
 <p><strong>Synopsis</strong>
 </p><div class="example">
-<pre class="example">void bfd_set_filename (bfd *abfd, char *filename);
+<pre class="example">const char *bfd_set_filename (bfd *abfd, const char *filename);
 </pre></div>
 <p><strong>Description</strong><br>
-Set the filename of <var>abfd</var>.  The old filename, if any, is freed.
-<var>filename</var> must be allocated using <code>xmalloc</code>.  After
-this call, it is owned <var>abfd</var>.
+Set the filename of <var>abfd</var>, copying the FILENAME parameter to
+bfd_alloc&rsquo;d memory owned by <var>abfd</var>.  Returns a pointer the
+newly allocated name, or NULL if the allocation failed.
 </p>
 
 <hr>

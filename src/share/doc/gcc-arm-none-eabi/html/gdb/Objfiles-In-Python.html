@@ -204,7 +204,7 @@ def new_objfile_handler(event):
 gdb.events.new_objfile.connect(new_objfile_handler)
 end
 (gdb) file ./hello
-Reading symbols from ./hello...done.
+Reading symbols from ./hello...
 (gdb) python print gdb.objfiles()[0].time_loaded
 2014-10-09 11:41:36.770345
 </pre></div>

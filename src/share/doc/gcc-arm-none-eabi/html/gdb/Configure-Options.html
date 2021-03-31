@@ -172,6 +172,15 @@ supported).
 terminal operations.
 </p>
 </dd>
+<dt><code>--with-debuginfod</code></dt>
+<dd><p>Build <small>GDB</small> with libdebuginfod, the debuginfod client library.
+Used to automatically fetch source files and separate debug files from
+debuginfod servers using the associated executable&rsquo;s build ID. Enabled
+by default if libdebuginfod is installed and found at configure time.
+debuginfod is packaged with elfutils, starting with version 0.178. You
+can get the latest version from &lsquo;https://sourceware.org/elfutils/&rsquo;.
+</p>
+</dd>
 <dt><code>--with-libunwind-ia64</code></dt>
 <dd><p>Use the libunwind library for unwinding function call stack on ia64
 target platforms.  See http://www.nongnu.org/libunwind/index.html for

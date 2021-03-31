@@ -81,7 +81,7 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
  [<b>&ndash;compress-debug-sections</b>]  [<b>&ndash;nocompress-debug-sections</b>]
  [<b>&ndash;debug-prefix-map</b> <var>old</var>=<var>new</var>]
  [<b>&ndash;defsym</b> <var>sym</var>=<var>val</var>] [<b>-f</b>] [<b>-g</b>] [<b>&ndash;gstabs</b>]
- [<b>&ndash;gstabs+</b>] [<b>&ndash;gdwarf-2</b>] [<b>&ndash;gdwarf-sections</b>]
+ [<b>&ndash;gstabs+</b>] [<b>&ndash;gdwarf-&lt;N&gt;</b>] [<b>&ndash;gdwarf-sections</b>]
  [<b>&ndash;gdwarf-cie-version</b>=<var>VERSION</var>]
  [<b>&ndash;help</b>] [<b>-I</b> <var>dir</var>] [<b>-J</b>]
  [<b>-K</b>] [<b>-L</b>] [<b>&ndash;listing-lhs-width</b>=<var>NUM</var>]
@@ -377,6 +377,7 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
  [<b>&ndash;[no-]transform</b>]
  [<b>&ndash;rename-section</b> <var>oldname</var>=<var>newname</var>]
  [<b>&ndash;[no-]trampolines</b>]
+ [<b>&ndash;abi-windowed</b>|<b>&ndash;abi-call0</b>]
 
 <em>Target Z80 options:</em>
   [<b>-march=<var>CPU</var><var>[-EXT]</var><var>[+EXT]</var></b>]
@@ -514,7 +515,9 @@ compiler output).
 <dt><code>--gen-debug</code></dt>
 <dd><p>Generate debugging information for each assembler source line using whichever
 debug format is preferred by the target.  This currently means either STABS,
-ECOFF or DWARF2.
+ECOFF or DWARF2.  When the debug format is DWARF then a <code>.debug_info</code> and
+<code>.debug_line</code> section is only emitted when the assembly file doesn&rsquo;t
+generate one itself.
 </p>
 </dd>
 <dt><code>--gstabs</code></dt>
@@ -534,6 +537,30 @@ the location of the current working directory at assembling time.
 <dd><p>Generate DWARF2 debugging information for each assembler line.  This
 may help debugging assembler code, if the debugger can handle it.  Note&mdash;this
 option is only supported by some targets, not all of them.
+</p>
+</dd>
+<dt><code>--gdwarf-3</code></dt>
+<dd><p>This option is the same as the <samp>--gdwarf-2</samp> option, except that it
+allows for the possibility of the generation of extra debug information as per
+version 3 of the DWARF specification.  Note - enabling this option does not
+guarantee the generation of any extra infortmation, the choice to do so is on a
+per target basis.
+</p>
+</dd>
+<dt><code>--gdwarf-4</code></dt>
+<dd><p>This option is the same as the <samp>--gdwarf-2</samp> option, except that it
+allows for the possibility of the generation of extra debug information as per
+version 4 of the DWARF specification.  Note - enabling this option does not
+guarantee the generation of any extra infortmation, the choice to do so is on a
+per target basis.
+</p>
+</dd>
+<dt><code>--gdwarf-5</code></dt>
+<dd><p>This option is the same as the <samp>--gdwarf-2</samp> option, except that it
+allows for the possibility of the generation of extra debug information as per
+version 5 of the DWARF specification.  Note - enabling this option does not
+guarantee the generation of any extra infortmation, the choice to do so is on a
+per target basis.
 </p>
 </dd>
 <dt><code>--gdwarf-sections</code></dt>

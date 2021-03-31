@@ -503,15 +503,17 @@ filled in with the value specified by <samp>--gap-fill</samp> (default zero).
 </p>
 </dd>
 <dt><code>--set-start <var>val</var></code></dt>
-<dd><p>Set the start address of the new file to <var>val</var>.  Not all object file
-formats support setting the start address.
+<dd><p>Set the start address (also known as the entry address) of the new
+file to <var>val</var>.  Not all object file formats support setting the
+start address.
 </p>
 </dd>
 <dt><code>--change-start <var>incr</var></code></dt>
 <dt><code>--adjust-start <var>incr</var></code></dt>
 <dd><a name="index-changing-start-address"></a>
-<p>Change the start address by adding <var>incr</var>.  Not all object file
-formats support setting the start address.
+<p>Change the start address (also known as the entry address) by adding
+<var>incr</var>.  Not all object file formats support setting the start
+address.
 </p>
 </dd>
 <dt><code>--change-addresses <var>incr</var></code></dt>
@@ -591,7 +593,9 @@ recognized names are &lsquo;<samp>alloc</samp>&rsquo;, &lsquo;<samp>contents</sa
 &lsquo;<samp>contents</samp>&rsquo; flag for a section which does not have contents, but it
 is not meaningful to clear the &lsquo;<samp>contents</samp>&rsquo; flag of a section which
 does have contents&ndash;just remove the section instead.  Not all flags are
-meaningful for all object file formats.
+meaningful for all object file formats.  In particular the
+&lsquo;<samp>share</samp>&rsquo; flag is only meaningful for COFF format files and not for
+ELF format files.
 </p>
 </dd>
 <dt><code>--set-section-alignment <var>sectionpattern</var>=<var>align</var></code></dt>
@@ -653,7 +657,8 @@ symbol table in the order they appear.
 changing the section&rsquo;s flags to <var>flags</var> in the process.  This has
 the advantage over using a linker script to perform the rename in that
 the output stays as an object file and does not become a linked
-executable.
+executable.  This option accepts the same set of flags as the
+<samp>--sect-section-flags</samp> option.
 </p>
 <p>This option is particularly helpful when the input format is binary,
 since this will always create a section called .data.  If for example,

@@ -405,6 +405,16 @@ The created source file is built into <small>GDB</small> when <small>GDB</small>
 built again.  This command is used by developers after they add or
 modify XML target descriptions.
 </p>
+<a name="index-maint-print-xml_002dtdesc"></a>
+</dd>
+<dt><code>maint print xml-tdesc  <span class="roman">[</span><var>file</var><span class="roman">]</span></code></dt>
+<dd><p>Print the target description (see <a href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>) as an XML
+file.  By default print the target description for the current target,
+but if the optional argument <var>file</var> is provided, then that file is
+read in by GDB and then used to produce the description.  The
+<var>file</var> should be an XML document, of the form described in
+<a href="Target-Description-Format.html#Target-Description-Format">Target Description Format</a>.
+</p>
 <a name="index-maint-check-xml_002ddescriptions"></a>
 </dd>
 <dt><code>maint check xml-descriptions <var>dir</var></code></dt>
@@ -420,6 +430,15 @@ library.  This exercises all <code>libthread_db</code> functionality used by
 <code>proc_service</code> functions provided by <small>GDB</small> that
 <code>libthread_db</code> uses.  Note that parts of the test may be skipped
 on some platforms when debugging core files.
+</p>
+<a name="index-maint-print-core_002dfile_002dbacked_002dmappings"></a>
+<a name="index-memory-address-space-mappings-1"></a>
+</dd>
+<dt><code>maint print core-file-backed-mappings</code></dt>
+<dd><p>Print the file-backed mappings which were loaded from a core file note.
+This output represents state internal to <small>GDB</small> and should be
+similar to the mappings displayed by the <code>info proc mappings</code>
+command.
 </p>
 <a name="index-maint-print-dummy_002dframes"></a>
 </dd>

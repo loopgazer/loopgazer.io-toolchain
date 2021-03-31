@@ -74,7 +74,7 @@ Next: <a href="PowerPC-Atomic-Memory-Operation-Functions.html#PowerPC-Atomic-Mem
 </div>
 <hr>
 <a name="PowerPC-Hardware-Transactional-Memory-Built_002din-Functions-1"></a>
-<h4 class="subsection">6.60.25 PowerPC Hardware Transactional Memory Built-in Functions</h4>
+<h4 class="subsection">6.60.24 PowerPC Hardware Transactional Memory Built-in Functions</h4>
 <p>GCC provides two interfaces for accessing the Hardware Transactional
 Memory (HTM) instructions available on some of the PowerPC family
 of processors (eg, POWER8).  The two interfaces come in a low level
@@ -83,7 +83,7 @@ higher level interface consisting of inline functions that are common
 between PowerPC and S/390.
 </p>
 <a name="PowerPC-HTM-Low-Level-Built_002din-Functions"></a>
-<h4 class="subsubsection">6.60.25.1 PowerPC HTM Low Level Built-in Functions</h4>
+<h4 class="subsubsection">6.60.24.1 PowerPC HTM Low Level Built-in Functions</h4>
 
 <p>The following low level built-in functions are available with
 <samp>-mhtm</samp> or <samp>-mcpu=CPU</samp> where CPU is &lsquo;power8&rsquo; or later.
@@ -226,7 +226,7 @@ else if (tx_state == _HTM_SUSPENDED)
 </pre></div>
 
 <a name="PowerPC-HTM-High-Level-Inline-Functions"></a>
-<h4 class="subsubsection">6.60.25.2 PowerPC HTM High Level Inline Functions</h4>
+<h4 class="subsubsection">6.60.24.2 PowerPC HTM High Level Inline Functions</h4>
 
 <p>The following high level HTM interface is made available by including
 <code>&lt;htmxlintrin.h&gt;</code> and using <samp>-mhtm</samp> or <samp>-mcpu=CPU</samp>

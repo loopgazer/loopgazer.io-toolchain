@@ -205,7 +205,7 @@ gdb.events.clear_objfiles.connect(clear_objfiles_handler)
 gdb.events.new_objfile.connect(new_objfile_handler)
 end
 (gdb) file /tmp/hello
-Reading symbols from /tmp/hello...done.
+Reading symbols from /tmp/hello...
 Computing the answer to the ultimate question ...
 (gdb) python print gdb.current_progspace().expensive_computation
 42

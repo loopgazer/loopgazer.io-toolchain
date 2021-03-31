@@ -478,11 +478,12 @@ Objective-C and Objective-C++ Dialects</a>.
 -fprofile-dir=<var>path</var>  -fprofile-generate  -fprofile-generate=<var>path</var> 
 -fprofile-note=<var>path</var> -fprofile-prefix-path=<var>path</var> 
 -fprofile-update=<var>method</var> -fprofile-filter-files=<var>regex</var> 
--fprofile-exclude-files=<var>regex</var> -fprofile-reproducibility 
+-fprofile-exclude-files=<var>regex</var> 
+-fprofile-reproducible=<span class="roman">[</span>multithreaded<span class="roman">|</span>parallel-runs<span class="roman">|</span>serial<span class="roman">]</span> 
 -fsanitize=<var>style</var>  -fsanitize-recover  -fsanitize-recover=<var>style</var> 
 -fasan-shadow-offset=<var>number</var>  -fsanitize-sections=<var>s1</var>,<var>s2</var>,... 
 -fsanitize-undefined-trap-on-error  -fbounds-check 
--fcf-protection=<span class="roman">[</span>full<span class="roman">|</span>branch<span class="roman">|</span>return<span class="roman">|</span>none<span class="roman">]</span> 
+-fcf-protection=<span class="roman">[</span>full<span class="roman">|</span>branch<span class="roman">|</span>return<span class="roman">|</span>none<span class="roman">|</span>check<span class="roman">]</span> 
 -fstack-protector  -fstack-protector-all  -fstack-protector-strong 
 -fstack-protector-explicit  -fstack-check 
 -fstack-limit-register=<var>reg</var>  -fstack-limit-symbol=<var>sym</var> 
@@ -641,6 +642,7 @@ Objective-C and Objective-C++ Dialects</a>.
 -msign-return-address=<var>scope</var> 
 -mbranch-protection=<var>none</var>|<var>standard</var>|<var>pac-ret</var>[+<var>leaf</var>
 +<var>b-key</var>]|<var>bti</var> 
+-mharden-sls=<var>opts</var> 
 -march=<var>name</var>  -mcpu=<var>name</var>  -mtune=<var>name</var>  
 -moverride=<var>string</var>  -mverbose-cost-dump 
 -mstack-protector-guard=<var>guard</var> -mstack-protector-guard-reg=<var>sysreg</var> 
@@ -833,7 +835,7 @@ Objective-C and Objective-C++ Dialects</a>.
 <p><em>eBPF Options</em>
 </p><div class="smallexample">
 <pre class="smallexample">-mbig-endian -mlittle-endian -mkernel=<var>version</var>
--mframe-limit=<var>bytes</var>
+-mframe-limit=<var>bytes</var> -mxbpf
 </pre></div>
 
 <p><em>FR30 Options</em>
@@ -1227,7 +1229,7 @@ See RS/6000 and PowerPC Options.
 -mgnu-attribute  -mno-gnu-attribute 
 -mstack-protector-guard=<var>guard</var> -mstack-protector-guard-reg=<var>reg</var> 
 -mstack-protector-guard-offset=<var>offset</var> -mprefixed -mno-prefixed 
--mpcrel -mno-pcrel
+-mpcrel -mno-pcrel -mmma -mno-mmma
 </pre></div>
 
 <p><em>RX Options</em>

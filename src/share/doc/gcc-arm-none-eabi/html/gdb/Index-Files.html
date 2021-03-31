@@ -151,9 +151,7 @@ must be done before gdb reads the file.  The following will not work:
 <pre class="smallexample">$ gdb -iex &quot;set use-deprecated-index-sections on&quot; &lt;program&gt;
 </pre></div>
 
-<p>There are currently some limitation on indices.  They only work when
-using DWARF debugging information, not stabs.  And, only the
-<code>-dwarf-5</code> index works for programs using Ada.
+<p>Indices only work when using DWARF debugging information, not stabs.
 </p>
 <a name="Automatic-symbol-index-cache"></a>
 <h4 class="subsection">18.5.1 Automatic symbol index cache</h4>

@@ -87,6 +87,24 @@ Next: <a href="RISC_002dV_002dDirectives.html#RISC_002dV_002dDirectives" accessk
 </dd>
 <dt><code>-march=ISA</code></dt>
 <dd><p>Select the base isa, as specified by ISA.  For example -march=rv32ima.
+If this option and the architecture attributes aren&rsquo;t set, then assembler
+will check the default configure setting &ndash;with-arch=ISA.
+</p>
+<a name="index-_002dmisa_002dspec_003dISAspec-option_002c-RISC_002dV"></a>
+</dd>
+<dt><code>-misa-spec=ISAspec</code></dt>
+<dd><p>Select the default isa spec version.  If the version of ISA isn&rsquo;t set
+by -march, then assembler helps to set the version according to
+the default chosen spec.  If this option isn&rsquo;t set, then assembler will
+check the default configure setting &ndash;with-isa-spec=ISAspec.
+</p>
+<a name="index-_002dmpriv_002dspec_003dPRIVspec-option_002c-RISC_002dV"></a>
+</dd>
+<dt><code>-mpriv-spec=PRIVspec</code></dt>
+<dd><p>Select the privileged spec version.  We can decide whether the CSR is valid or
+not according to the chosen spec.  If this option and the privilege attributes
+aren&rsquo;t set, then assembler will check the default configure setting
+&ndash;with-priv-spec=PRIVspec.
 </p>
 <a name="index-_002dmabi_003dABI-option_002c-RISC_002dV"></a>
 </dd>
@@ -138,6 +156,11 @@ read-only CSR can not be written by the CSR instructions.
 </p></dd>
 </dl>
 
+<hr>
+<div class="header">
+<p>
+Next: <a href="RISC_002dV_002dDirectives.html#RISC_002dV_002dDirectives" accesskey="n" rel="next">RISC-V-Directives</a>, Up: <a href="RISC_002dV_002dDependent.html#RISC_002dV_002dDependent" accesskey="u" rel="up">RISC-V-Dependent</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="AS-Index.html#AS-Index" title="Index" rel="index">Index</a>]</p>
+</div>
 
 
 

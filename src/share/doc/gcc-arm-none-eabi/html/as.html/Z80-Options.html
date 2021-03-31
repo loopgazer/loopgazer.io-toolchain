@@ -71,7 +71,7 @@ Next: <a href="Z80-Syntax.html#Z80-Syntax" accesskey="n" rel="next">Z80 Syntax</
 <a name="index-options-for-Z80"></a>
 <dl compact="compact">
 <dd>
-<a name="index-_002dmarch_003d-option_002c-Z80"></a>
+<a name="index-_002dmarch_003d-command_002dline-option_002c-Z80"></a>
 </dd>
 <dt><code>-march=<var>CPU</var>[-<var>EXT</var>&hellip;][+<var>EXT</var>&hellip;]</code></dt>
 <dd><p>This option specifies the target processor. The assembler will issue
@@ -87,9 +87,9 @@ are recognized:
 In addition to the basic instruction set, the assembler can be told to
 accept some extention mnemonics. For example,
 <code>-march=z180+sli+infc</code> extends <var>z180</var> with <var>SLI</var> instructions and
-<var>IN F,(C)</var>. The following instructions are currently supported:
+<var>IN F,(C)</var>. The following extentions are currently supported:
 <code>full</code> (all known instructions),
-<code>adl</code> (ADL CPU mode by default),
+<code>adl</code> (ADL CPU mode by default, eZ80 only),
 <code>sli</code> (instruction known as <var>SLI</var>, <var>SLL</var> or <var>SL1</var>),
 <code>xyhl</code> (instructions with halves of index registers: <var>IXL</var>, <var>IXH</var>,
 <var>IYL</var>, <var>IYH</var>),
@@ -101,6 +101,8 @@ mnemonics starting with <code>-</code> revoke the respective functionality:
 <code>-march=z80-full+xyhl</code> first removes all default extentions and adds
 support for index registers halves only.
 </p>
+<p>If this option is not specified then <code>-march=z80+xyhl+infc</code> is assumed.
+</p>
 <a name="index-_002dlocal_002dprefix-command_002dline-option_002c-Z80"></a>
 </dd>
 <dt><code>-local-prefix=<var>prefix</var></code></dt>
@@ -111,7 +113,7 @@ local label prefix <code>.L</code>, it is just adds new one.
 <a name="index-_002dcolonless-command_002dline-option_002c-Z80"></a>
 </dd>
 <dt><code>-colonless</code></dt>
-<dd><p>Accept colonless labels. All names at line begin are treated as labels.
+<dd><p>Accept colonless labels. All symbols at line begin are treated as labels.
 </p>
 <a name="index-_002dsdcc-command_002dline-option_002c-Z80"></a>
 </dd>

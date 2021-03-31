@@ -25,7 +25,6 @@ developing GNU and promoting software freedom." -->
 <link href="#Top" rel="start" title="Top">
 <link href="Concept-Index.html#Concept-Index" rel="index" title="Concept Index">
 <link href="#SEC_Contents" rel="contents" title="Table of Contents">
-<link href="../dir/index.html" rel="up" title="(dir)">
 <link href="Summary.html#Summary" rel="next" title="Summary">
 <style type="text/css">
 <!--
@@ -73,8 +72,8 @@ ul.no-bullet {list-style: none}
 </p>
 <p>This is the Tenth Edition, of <cite>Debugging with
 <small>GDB</small>: the <small>GNU</small> Source-Level Debugger</cite> for <small>GDB</small>
-(GNU Arm Embedded Toolchain 10-2020-q2-preview)
-Version 10.0.50.20200226-git.
+(GNU Arm Embedded Toolchain 10-2020-q4-major)
+Version 10.1.90.20201028-git.
 </p>
 <p>Copyright &copy; 1988-2020 Free Software Foundation, Inc.
 </p>
@@ -94,7 +93,7 @@ developing GNU and promoting software freedom.&rdquo;
 <a name="Top"></a>
 <div class="header">
 <p>
-Next: <a href="Summary.html#Summary" accesskey="n" rel="next">Summary</a>, Previous: <a href="../dir/index.html" accesskey="p" rel="prev">(dir)</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Summary.html#Summary" accesskey="n" rel="next">Summary</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
 
@@ -104,8 +103,8 @@ Next: <a href="Summary.html#Summary" accesskey="n" rel="next">Summary</a>, Previ
 <p>This file describes <small>GDB</small>, the <small>GNU</small> symbolic debugger.
 </p>
 <p>This is the Tenth Edition, for <small>GDB</small>
-(GNU Arm Embedded Toolchain 10-2020-q2-preview)
-Version 10.0.50.20200226-git.
+(GNU Arm Embedded Toolchain 10-2020-q4-major)
+Version 10.1.90.20201028-git.
 </p>
 <p>Copyright (C) 1988-2020 Free Software Foundation, Inc.
 </p>
@@ -260,7 +259,8 @@ software in general.  We will miss him.
     <li><a name="toc-Command-Settings-1" href="Command-Settings.html#Command-Settings">3.2 Command Settings</a></li>
     <li><a name="toc-Command-Completion" href="Completion.html#Completion">3.3 Command Completion</a></li>
     <li><a name="toc-Command-options" href="Command-Options.html#Command-Options">3.4 Command options</a></li>
-    <li><a name="toc-Getting-Help" href="Help.html#Help">3.5 Getting Help</a></li>
+    <li><a name="toc-Automatically-prepend-default-arguments-to-user_002ddefined-aliases" href="Command-aliases-default-args.html#Command-aliases-default-args">3.5 Automatically prepend default arguments to user-defined aliases</a></li>
+    <li><a name="toc-Getting-Help" href="Help.html#Help">3.6 Getting Help</a></li>
   </ul></li>
   <li><a name="toc-Running-Programs-Under-GDB" href="Running.html#Running">4 Running Programs Under <small>GDB</small></a>
   <ul class="no-bullet">
@@ -581,14 +581,15 @@ software in general.  We will miss him.
     <ul class="no-bullet">
       <li><a name="toc-Synopsys-ARC" href="ARC.html#ARC">21.3.1 Synopsys ARC</a></li>
       <li><a name="toc-ARM-1" href="ARM.html#ARM">21.3.2 ARM</a></li>
-      <li><a name="toc-M68k" href="M68K.html#M68K">21.3.3 M68k</a></li>
-      <li><a name="toc-MicroBlaze-1" href="MicroBlaze.html#MicroBlaze">21.3.4 MicroBlaze</a></li>
-      <li><a name="toc-MIPS-Embedded-1" href="MIPS-Embedded.html#MIPS-Embedded">21.3.5 <acronym>MIPS</acronym> Embedded</a></li>
-      <li><a name="toc-OpenRISC-1000-1" href="OpenRISC-1000.html#OpenRISC-1000">21.3.6 OpenRISC 1000</a></li>
-      <li><a name="toc-PowerPC-Embedded-1" href="PowerPC-Embedded.html#PowerPC-Embedded">21.3.7 PowerPC Embedded</a></li>
-      <li><a name="toc-Atmel-AVR" href="AVR.html#AVR">21.3.8 Atmel AVR</a></li>
-      <li><a name="toc-CRIS-1" href="CRIS.html#CRIS">21.3.9 CRIS</a></li>
-      <li><a name="toc-Renesas-Super_002dH" href="Super_002dH.html#Super_002dH">21.3.10 Renesas Super-H</a></li>
+      <li><a name="toc-BPF-1" href="BPF.html#BPF">21.3.3 BPF</a></li>
+      <li><a name="toc-M68k" href="M68K.html#M68K">21.3.4 M68k</a></li>
+      <li><a name="toc-MicroBlaze-1" href="MicroBlaze.html#MicroBlaze">21.3.5 MicroBlaze</a></li>
+      <li><a name="toc-MIPS-Embedded-1" href="MIPS-Embedded.html#MIPS-Embedded">21.3.6 <acronym>MIPS</acronym> Embedded</a></li>
+      <li><a name="toc-OpenRISC-1000-1" href="OpenRISC-1000.html#OpenRISC-1000">21.3.7 OpenRISC 1000</a></li>
+      <li><a name="toc-PowerPC-Embedded-1" href="PowerPC-Embedded.html#PowerPC-Embedded">21.3.8 PowerPC Embedded</a></li>
+      <li><a name="toc-Atmel-AVR" href="AVR.html#AVR">21.3.9 Atmel AVR</a></li>
+      <li><a name="toc-CRIS-1" href="CRIS.html#CRIS">21.3.10 CRIS</a></li>
+      <li><a name="toc-Renesas-Super_002dH" href="Super_002dH.html#Super_002dH">21.3.11 Renesas Super-H</a></li>
     </ul></li>
     <li><a name="toc-Architectures-1" href="Architectures.html#Architectures">21.4 Architectures</a>
     <ul class="no-bullet">
@@ -681,7 +682,8 @@ software in general.  We will miss him.
         <li><a name="toc-Finish-Breakpoints" href="Finish-Breakpoints-in-Python.html#Finish-Breakpoints-in-Python">23.2.2.31 Finish Breakpoints</a></li>
         <li><a name="toc-Python-representation-of-lazy-strings" href="Lazy-Strings-In-Python.html#Lazy-Strings-In-Python">23.2.2.32 Python representation of lazy strings</a></li>
         <li><a name="toc-Python-representation-of-architectures" href="Architectures-In-Python.html#Architectures-In-Python">23.2.2.33 Python representation of architectures</a></li>
-        <li><a name="toc-Implementing-new-TUI-windows" href="TUI-Windows-In-Python.html#TUI-Windows-In-Python">23.2.2.34 Implementing new TUI windows</a></li>
+        <li><a name="toc-Registers-In-Python-1" href="Registers-In-Python.html#Registers-In-Python">23.2.2.34 Registers In Python</a></li>
+        <li><a name="toc-Implementing-new-TUI-windows" href="TUI-Windows-In-Python.html#TUI-Windows-In-Python">23.2.2.35 Implementing new TUI windows</a></li>
       </ul></li>
       <li><a name="toc-Python-Auto_002dloading-1" href="Python-Auto_002dloading.html#Python-Auto_002dloading">23.2.3 Python Auto-loading</a></li>
       <li><a name="toc-Python-modules-1" href="Python-modules.html#Python-modules">23.2.4 Python modules</a>
@@ -1037,7 +1039,7 @@ software in general.  We will miss him.
 <hr>
 <div class="header">
 <p>
-Next: <a href="Summary.html#Summary" accesskey="n" rel="next">Summary</a>, Previous: <a href="../dir/index.html" accesskey="p" rel="prev">(dir)</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Summary.html#Summary" accesskey="n" rel="next">Summary</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 
 

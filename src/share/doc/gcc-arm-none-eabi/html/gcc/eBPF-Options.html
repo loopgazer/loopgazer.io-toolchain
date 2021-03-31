@@ -106,7 +106,16 @@ instructions to use, what kernel helpers to allow, etc.  Currently,
 <dt><code>-mlittle-endian</code></dt>
 <dd><a name="index-mlittle_002dendian-5"></a>
 <p>Generate code for a little-endian target.  This is the default.
-</p></dd>
+</p>
+</dd>
+<dt><code>-mxbpf</code></dt>
+<dd><p>Generate code for an expanded version of BPF, which relaxes some of
+the restrictions imposed by the BPF architecture:
+</p><ul class="no-bullet">
+<li>- Save and restore callee-saved registers at function entry and
+exit, respectively.
+</li></ul>
+</dd>
 </dl>
 
 

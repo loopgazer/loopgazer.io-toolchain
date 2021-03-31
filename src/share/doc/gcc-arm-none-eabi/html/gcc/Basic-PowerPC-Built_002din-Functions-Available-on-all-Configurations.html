@@ -74,7 +74,7 @@ Next: <a href="Basic-PowerPC-Built_002din-Functions-Available-on-ISA-2_002e05.ht
 </div>
 <hr>
 <a name="Basic-PowerPC-Built_002din-Functions-Available-on-all-Configurations-1"></a>
-<h4 class="subsubsection">6.60.23.1 Basic PowerPC Built-in Functions Available on all Configurations</h4>
+<h4 class="subsubsection">6.60.22.1 Basic PowerPC Built-in Functions Available on all Configurations</h4>
 
 <dl>
 <dt><a name="index-_005f_005fbuiltin_005fcpu_005finit"></a>Built-in Function: <em>void</em> <strong>__builtin_cpu_init</strong> <em>(void)</em></dt>
@@ -99,6 +99,9 @@ issues a warning.
 <p>The following CPU names can be detected:
 </p>
 <dl compact="compact">
+<dt>&lsquo;<samp>power10</samp>&rsquo;</dt>
+<dd><p>IBM POWER10 Server CPU.
+</p></dd>
 <dt>&lsquo;<samp>power9</samp>&rsquo;</dt>
 <dd><p>IBM POWER9 Server CPU.
 </p></dd>
@@ -197,6 +200,9 @@ detected:
 <dt>&lsquo;<samp>arch_3_00</samp>&rsquo;</dt>
 <dd><p>CPU supports ISA 3.0 (eg, POWER9)
 </p></dd>
+<dt>&lsquo;<samp>arch_3_1</samp>&rsquo;</dt>
+<dd><p>CPU supports ISA 3.1 (eg, POWER10)
+</p></dd>
 <dt>&lsquo;<samp>archpmu</samp>&rsquo;</dt>
 <dd><p>CPU supports the set of compatible performance monitoring events.
 </p></dd>
@@ -245,6 +251,9 @@ detected:
 </p></dd>
 <dt>&lsquo;<samp>isel</samp>&rsquo;</dt>
 <dd><p>CPU supports the integer select instruction.
+</p></dd>
+<dt>&lsquo;<samp>mma</samp>&rsquo;</dt>
+<dd><p>CPU supports the matrix-multiply assist instructions.
 </p></dd>
 <dt>&lsquo;<samp>mmu</samp>&rsquo;</dt>
 <dd><p>CPU has a memory management unit.

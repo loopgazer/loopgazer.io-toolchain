@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-13_20200625_1593044217/install-native/share/gcc-arm-none-eabi'
-libdir = '/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-13_20200625_1593044217/install-native/arm-none-eabi/lib/thumb/v7e-m+fp/softfp'
+pythondir = '/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-48_20201124_1606180641/install-native/share/gcc-arm-none-eabi'
+libdir = '/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-48_20201124_1606180641/install-native/arm-none-eabi/lib/thumb/v7e-m+fp/softfp'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't

@@ -91,7 +91,7 @@ the values of memory and/or registers that were changed by that
 instruction are reverted to their previous states.  After executing
 a piece of source code in reverse, all side effects of that code
 should be &ldquo;undone&rdquo;, and all variables should be returned to their
-prior values<a name="DOCF6" href="#FOOT6"><sup>6</sup></a>.
+prior values<a name="DOCF7" href="#FOOT7"><sup>7</sup></a>.
 </p>
 <p>On some platforms, <small>GDB</small> has built-in support for reverse
 execution, activated with the <code>record</code> or <code>record btrace</code>
@@ -151,7 +151,7 @@ the first line of a function, <code>reverse-next</code> will take you back
 to the caller of that function, <em>before</em> the function was called,
 just as the normal <code>next</code> command would take you from the last 
 line of a function back to its return to its caller
-<a name="DOCF7" href="#FOOT7"><sup>7</sup></a>.
+<a name="DOCF8" href="#FOOT8"><sup>8</sup></a>.
 </p>
 <a name="index-reverse_002dnexti"></a>
 <a name="index-rni-_0028reverse_002dnexti_0029"></a>
@@ -195,7 +195,7 @@ This is the default.
 <hr>
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<h3><a name="FOOT6" href="#DOCF6">(6)</a></h3>
+<h3><a name="FOOT7" href="#DOCF7">(7)</a></h3>
 <p>Note that some side effects are easier to undo than others.  For instance,
 memory and registers are relatively easy, but device I/O is hard.  Some
 targets may be able undo things like device I/O, and some may not.
@@ -208,7 +208,7 @@ results back to <small>GDB</small>.  Whatever the target reports back to
 assumes that the memory and registers that the target reports are in a
 consistent state, but <small>GDB</small> accepts whatever it is given.
 </p>
-<h3><a name="FOOT7" href="#DOCF7">(7)</a></h3>
+<h3><a name="FOOT8" href="#DOCF8">(8)</a></h3>
 <p>Unless the code is too heavily optimized.</p>
 </div>
 <hr>

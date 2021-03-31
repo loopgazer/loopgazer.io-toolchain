@@ -326,16 +326,17 @@ performance of the code.  Permissible values for this option are:
 &lsquo;<samp>cortex-a57</samp>&rsquo;, &lsquo;<samp>cortex-a72</samp>&rsquo;, &lsquo;<samp>cortex-a73</samp>&rsquo;, &lsquo;<samp>cortex-a75</samp>&rsquo;,
 &lsquo;<samp>cortex-a76</samp>&rsquo;, &lsquo;<samp>cortex-a76ae</samp>&rsquo;, &lsquo;<samp>cortex-a77</samp>&rsquo;,
 &lsquo;<samp>cortex-a65</samp>&rsquo;, &lsquo;<samp>cortex-a65ae</samp>&rsquo;, &lsquo;<samp>cortex-a34</samp>&rsquo;,
-&lsquo;<samp>ares</samp>&rsquo;, &lsquo;<samp>exynos-m1</samp>&rsquo;, &lsquo;<samp>emag</samp>&rsquo;, &lsquo;<samp>falkor</samp>&rsquo;,
-&lsquo;<samp>neoverse-e1</samp>&rsquo;,&lsquo;<samp>neoverse-n1</samp>&rsquo;,&lsquo;<samp>qdf24xx</samp>&rsquo;, &lsquo;<samp>saphira</samp>&rsquo;,
-&lsquo;<samp>phecda</samp>&rsquo;, &lsquo;<samp>xgene1</samp>&rsquo;, &lsquo;<samp>vulcan</samp>&rsquo;, &lsquo;<samp>octeontx</samp>&rsquo;,
+&lsquo;<samp>ares</samp>&rsquo;, &lsquo;<samp>exynos-m1</samp>&rsquo;, &lsquo;<samp>emag</samp>&rsquo;, &lsquo;<samp>falkor</samp>&rsquo;, &lsquo;<samp>neoverse-e1</samp>&rsquo;,
+&lsquo;<samp>neoverse-n1</samp>&rsquo;, &lsquo;<samp>neoverse-n2</samp>&rsquo;, &lsquo;<samp>neoverse-v1</samp>&rsquo;, &lsquo;<samp>qdf24xx</samp>&rsquo;,
+&lsquo;<samp>saphira</samp>&rsquo;, &lsquo;<samp>phecda</samp>&rsquo;, &lsquo;<samp>xgene1</samp>&rsquo;, &lsquo;<samp>vulcan</samp>&rsquo;, &lsquo;<samp>octeontx</samp>&rsquo;,
 &lsquo;<samp>octeontx81</samp>&rsquo;,  &lsquo;<samp>octeontx83</samp>&rsquo;,
 &lsquo;<samp>octeontx2</samp>&rsquo;, &lsquo;<samp>octeontx2t98</samp>&rsquo;, &lsquo;<samp>octeontx2t96</samp>&rsquo;
 &lsquo;<samp>octeontx2t93</samp>&rsquo;, &lsquo;<samp>octeontx2f95</samp>&rsquo;, &lsquo;<samp>octeontx2f95n</samp>&rsquo;,
-&lsquo;<samp>octeontx2f95mm</samp>&rsquo;
+&lsquo;<samp>octeontx2f95mm</samp>&rsquo;,
+&lsquo;<samp>a64fx</samp>&rsquo;,
 &lsquo;<samp>thunderx</samp>&rsquo;, &lsquo;<samp>thunderxt88</samp>&rsquo;,
 &lsquo;<samp>thunderxt88p1</samp>&rsquo;, &lsquo;<samp>thunderxt81</samp>&rsquo;, &lsquo;<samp>tsv110</samp>&rsquo;,
-&lsquo;<samp>thunderxt83</samp>&rsquo;, &lsquo;<samp>thunderx2t99</samp>&rsquo;, &lsquo;<samp>thunderx3t110</samp>&rsquo;,
+&lsquo;<samp>thunderxt83</samp>&rsquo;, &lsquo;<samp>thunderx2t99</samp>&rsquo;, &lsquo;<samp>thunderx3t110</samp>&rsquo;, &lsquo;<samp>zeus</samp>&rsquo;,
 &lsquo;<samp>cortex-a57.cortex-a53</samp>&rsquo;, &lsquo;<samp>cortex-a72.cortex-a53</samp>&rsquo;,
 &lsquo;<samp>cortex-a73.cortex-a35</samp>&rsquo;, &lsquo;<samp>cortex-a73.cortex-a53</samp>&rsquo;,
 &lsquo;<samp>cortex-a75.cortex-a55</samp>&rsquo;, &lsquo;<samp>cortex-a76.cortex-a55</samp>&rsquo;
@@ -427,6 +428,18 @@ argument &lsquo;<samp>leaf</samp>&rsquo; can be used to extend the signing to in
 functions.  The optional argument &lsquo;<samp>b-key</samp>&rsquo; can be used to sign the functions
 with the B-key instead of the A-key.
 &lsquo;<samp>bti</samp>&rsquo; turns on branch target identification mechanism.
+</p>
+</dd>
+<dt><code>-mharden-sls=<var>opts</var></code></dt>
+<dd><a name="index-mharden_002dsls"></a>
+<p>Enable compiler hardening against straight line speculation (SLS).
+<var>opts</var> is a comma-separated list of the following options:
+</p><dl compact="compact">
+<dt>&lsquo;<samp>retbr</samp>&rsquo;</dt>
+<dt>&lsquo;<samp>blr</samp>&rsquo;</dt>
+</dl>
+<p>In addition, &lsquo;<samp>-mharden-sls=all</samp>&rsquo; enables all SLS hardening while
+&lsquo;<samp>-mharden-sls=none</samp>&rsquo; disables all SLS hardening.
 </p>
 </dd>
 <dt><code>-msve-vector-bits=<var>bits</var></code></dt>

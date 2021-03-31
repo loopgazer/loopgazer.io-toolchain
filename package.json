@@ -1,6 +1,6 @@
 {
   "name": "toolchain-gccarmnoneeabi",
-  "version": "10.1.1",
+  "version": "10.2",
   "description": "GNU toolchain for Arm Cortex-M and Cortex-R processors",
   "homepage": "https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm",
   "license": "GPL-2.0-or-later",

@@ -66,7 +66,7 @@ Next: <a href="Tag.html#Tag" accesskey="n" rel="next">Tag</a>, Previous: <a href
 </div>
 <hr>
 <a name="g_t_002esymver"></a>
-<h3 class="section">7.94 <code>.symver</code></h3>
+<h3 class="section">7.95 <code>.symver</code></h3>
 <a name="index-symver-directive"></a>
 <a name="index-symbol-versioning"></a>
 <a name="index-versions-of-symbols"></a>
@@ -79,9 +79,9 @@ shared library.
 </p>
 <p>For ELF targets, the <code>.symver</code> directive can be used like this:
 </p><div class="smallexample">
-<pre class="smallexample">.symver <var>name</var>, <var>name2@nodename</var>
+<pre class="smallexample">.symver <var>name</var>, <var>name2@nodename</var>[ ,<var>visibility</var>]
 </pre></div>
-<p>If the symbol <var>name</var> is defined within the file
+<p>If the original symbol <var>name</var> is defined within the file
 being assembled, the <code>.symver</code> directive effectively creates a symbol
 alias with the name <var>name2@nodename</var>, and in fact the main reason that we
 just don&rsquo;t try and create a regular alias is that the <var>@</var> character isn&rsquo;t
@@ -94,7 +94,14 @@ function is being mentioned.  The <var>nodename</var> portion of the alias shoul
 the name of a node specified in the version script supplied to the linker when
 building a shared library.  If you are attempting to override a versioned
 symbol from a shared library, then <var>nodename</var> should correspond to the
-nodename of the symbol you are trying to override.
+nodename of the symbol you are trying to override.  The optional argument
+<var>visibility</var> updates the visibility of the original symbol.  The valid
+visibilities are <code>local</code>, <code>hidden</code>, and <code>remove</code>.  The
+<code>local</code> visibility makes the original symbol a local symbol
+(see <a href="Local.html#Local">Local</a>).  The <code>hidden</code> visibility sets the visibility of the
+original symbol to <code>hidden</code> (see <a href="Hidden.html#Hidden">Hidden</a>).  The <code>remove</code>
+visibility removes the original symbol from the symbol table.  If visibility
+isn&rsquo;t specified, the original symbol is unchanged.
 </p>
 <p>If the symbol <var>name</var> is not defined within the file being assembled, all
 references to <var>name</var> will be changed to <var>name2@nodename</var>.  If no

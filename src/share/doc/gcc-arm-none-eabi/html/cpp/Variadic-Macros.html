@@ -85,7 +85,7 @@ a function can.  The syntax for defining the macro is similar to that of
 a function.  Here is an example:
 </p>
 <div class="smallexample">
-<pre class="smallexample">#define eprintf(&hellip;) fprintf (stderr, __VA_ARGS__)
+<pre class="smallexample">#define eprintf(...) fprintf (stderr, __VA_ARGS__)
 </pre></div>
 
 <p>This kind of macro is called <em>variadic</em>.  When the macro is invoked,
@@ -109,11 +109,11 @@ below for an important special case for &lsquo;<samp>##</samp>&rsquo;.)
 <p>If your macro is complicated, you may want a more descriptive name for
 the variable argument than <code><span class="nolinebreak">__VA_ARGS__</span><!-- /@w --></code>.  CPP permits
 this, as an extension.  You may write an argument name immediately
-before the &lsquo;<samp>&hellip;</samp>&rsquo;; that name is used for the variable argument.
+before the &lsquo;<samp>...</samp>&rsquo;; that name is used for the variable argument.
 The <code>eprintf</code> macro above could be written
 </p>
 <div class="smallexample">
-<pre class="smallexample">#define eprintf(args&hellip;) fprintf (stderr, args)
+<pre class="smallexample">#define eprintf(args...) fprintf (stderr, args)
 </pre></div>
 
 <p>using this extension.  You cannot use <code><span class="nolinebreak">__VA_ARGS__</span><!-- /@w --></code> and this
@@ -123,7 +123,7 @@ extension in the same macro.
 macro.  We could define <code>eprintf</code> like this, instead:
 </p>
 <div class="smallexample">
-<pre class="smallexample">#define eprintf(format, &hellip;) fprintf (stderr, format, __VA_ARGS__)
+<pre class="smallexample">#define eprintf(format, ...) fprintf (stderr, format, __VA_ARGS__)
 </pre></div>
 
 <p>This formulation looks more descriptive, but historically it was less
@@ -160,7 +160,7 @@ invocation expands to its argument; but if the variable argument does
 not have any tokens, the <code><span class="nolinebreak">__VA_OPT__</span><!-- /@w --></code> expands to nothing:
 </p>
 <div class="smallexample">
-<pre class="smallexample">#define eprintf(format, &hellip;) \
+<pre class="smallexample">#define eprintf(format, ...) \
   fprintf (stderr, format __VA_OPT__(,) __VA_ARGS__)
 </pre></div>
 
@@ -173,7 +173,7 @@ the introduction of <code><span class="nolinebreak">__VA_OPT__</span><!-- /@w --
 supported in GNU CPP, for backward compatibility.  If you write
 </p>
 <div class="smallexample">
-<pre class="smallexample">#define eprintf(format, &hellip;) fprintf (stderr, format, ##__VA_ARGS__)
+<pre class="smallexample">#define eprintf(format, ...) fprintf (stderr, format, ##__VA_ARGS__)
 </pre></div>
 
 <p>and the variable argument is left out when the <code>eprintf</code> macro is
@@ -207,7 +207,7 @@ replacement list of a variadic macro.
 <p>Variadic macros became a standard part of the C language with C99.  
 GNU CPP previously supported them
 with a named variable argument
-(&lsquo;<samp>args&hellip;</samp>&rsquo;, not &lsquo;<samp>&hellip;</samp>&rsquo; and <code><span class="nolinebreak">__VA_ARGS__</span><!-- /@w --></code>), which
+(&lsquo;<samp>args...</samp>&rsquo;, not &lsquo;<samp>...</samp>&rsquo; and <code><span class="nolinebreak">__VA_ARGS__</span><!-- /@w --></code>), which
 is still supported for backward compatibility.
 </p>
 <hr>

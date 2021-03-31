@@ -96,8 +96,8 @@ Next: <a href="ranlib.html#ranlib" accesskey="n" rel="next">ranlib</a>, Previous
         [<samp>-r</samp>|<samp>--reloc</samp>]
         [<samp>-R</samp>|<samp>--dynamic-reloc</samp>]
         [<samp>-s</samp>|<samp>--full-contents</samp>]
-        [<samp>-W[lLiaprmfFsoRtUuTgAckK]</samp>|
-         <samp>--dwarf</samp>[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,=frames-interp,=str,=loc,=Ranges,=pubtypes,=trace_info,=trace_abbrev,=trace_aranges,=gdb_index,=addr,=cu_index,=links,=follow-links]]
+        [<samp>-W[lLiaprmfFsoORtUuTgAckK]</samp>|
+         <samp>--dwarf</samp>[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,=frames-interp,=str,=str-offsets,=loc,=Ranges,=pubtypes,=trace_info,=trace_abbrev,=trace_aranges,=gdb_index,=addr,=cu_index,=links,=follow-links]]
         [<samp>--ctf=</samp><var>section</var>]
         [<samp>-G</samp>|<samp>--stabs</samp>]
         [<samp>-t</samp>|<samp>--syms</samp>]
@@ -106,6 +106,7 @@ Next: <a href="ranlib.html#ranlib" accesskey="n" rel="next">ranlib</a>, Previous
         [<samp>-w</samp>|<samp>--wide</samp>]
         [<samp>--start-address=</samp><var>address</var>]
         [<samp>--stop-address=</samp><var>address</var>]
+        [<samp>--no-addresses</samp>]
         [<samp>--prefix-addresses</samp>]
         [<samp>--[no-]show-raw-insn</samp>]
         [<samp>--adjust-vma=</samp><var>offset</var>]
@@ -261,6 +262,12 @@ sections as if they were instructions.
 <p>Note if the <samp>--dwarf=follow-links</samp> option has also been enabled
 then any symbol tables in linked debug info files will be read in and
 used when disassembling.
+</p>
+</dd>
+<dt><code>--no-addresses</code></dt>
+<dd><p>When disassembling, don&rsquo;t print addresses on each line or for symbols
+and relocation offsets.  In combination with <samp>--no-show-raw-insn</samp>
+this may be useful for comparing compiler output.
 </p>
 </dd>
 <dt><code>--prefix-addresses</code></dt>
@@ -423,8 +430,7 @@ option or whether instruction notes should be generated as comments in the
 disasssembly using <samp>-M notes</samp>.
 </p>
 <p>For the x86, some of the options duplicate functions of the <samp>-m</samp>
-switch, but allow finer grained control.  Multiple selections from the
-following may be specified as a comma separated string.
+switch, but allow finer grained control.
 </p><dl compact="compact">
 <dt><code>x86-64</code></dt>
 <dt><code>i386</code></dt>
@@ -460,8 +466,10 @@ appear later in the option string.
 </p>
 </dd>
 <dt><code>suffix</code></dt>
-<dd><p>When in AT&amp;T mode, instructs the disassembler to print a mnemonic
-suffix even when the suffix could be inferred by the operands.
+<dd><p>When in AT&amp;T mode and also for a limited set of instructions when in Intel
+mode, instructs the disassembler to print a mnemonic suffix even when the
+suffix could be inferred by the operands or, for certain instructions, the
+execution mode&rsquo;s defaults.
 </p></dd>
 </dl>
 
@@ -478,10 +486,10 @@ rather than <code>li</code>.  All of the <samp>-m</samp> arguments for
 <samp>e300</samp>, <samp>e500</samp>, <samp>e500mc</samp>, <samp>e500mc64</samp>,
 <samp>e500x2</samp>, <samp>e5500</samp>, <samp>e6500</samp>, <samp>efs</samp>,
 <samp>power4</samp>, <samp>power5</samp>, <samp>power6</samp>, <samp>power7</samp>,
-<samp>power8</samp>, <samp>power9</samp>, <samp>ppc</samp>, <samp>ppc32</samp>,
-<samp>ppc64</samp>, <samp>ppc64bridge</samp>, <samp>ppcps</samp>, <samp>pwr</samp>,
-<samp>pwr2</samp>, <samp>pwr4</samp>, <samp>pwr5</samp>, <samp>pwr5x</samp>,
-<samp>pwr6</samp>, <samp>pwr7</samp>, <samp>pwr8</samp>, <samp>pwr9</samp>,
+<samp>power8</samp>, <samp>power9</samp>, <samp>power10</samp>, <samp>ppc</samp>,
+<samp>ppc32</samp>, <samp>ppc64</samp>, <samp>ppc64bridge</samp>, <samp>ppcps</samp>,
+<samp>pwr</samp>, <samp>pwr2</samp>, <samp>pwr4</samp>, <samp>pwr5</samp>, <samp>pwr5x</samp>,
+<samp>pwr6</samp>, <samp>pwr7</samp>, <samp>pwr8</samp>, <samp>pwr9</samp>, <samp>pwr10</samp>,
 <samp>pwrx</samp>, <samp>titan</samp>, and <samp>vle</samp>.
 <samp>32</samp> and <samp>64</samp> modify the default or a prior CPU
 selection, disabling and enabling 64-bit insns respectively.  In
@@ -686,8 +694,8 @@ after it has previously been enabled then use
 <samp>visualize-jumps=off</samp>.
 </p>
 </dd>
-<dt><code>-W[lLiaprmfFsoRtUuTgAckK]</code></dt>
-<dt><code>--dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,=frames-interp,=str,=loc,=Ranges,=pubtypes,=trace_info,=trace_abbrev,=trace_aranges,=gdb_index,=addr,=cu_index,=links,=follow-links]</code></dt>
+<dt><code>-W[lLiaprmfFsoORtUuTgAckK]</code></dt>
+<dt><code>--dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,=frames-interp,=str,=str-offsets,=loc,=Ranges,=pubtypes,=trace_info,=trace_abbrev,=trace_aranges,=gdb_index,=addr,=cu_index,=links,=follow-links]</code></dt>
 <dd>
 <p>Displays the contents of the DWARF debug sections in the file, if any
 are present.  Compressed debug sections are automatically decompressed
@@ -778,6 +786,11 @@ format.
 <dt><code>=loc</code></dt>
 <dd><p>Displays the contents of the &lsquo;<samp>.debug_loc</samp>&rsquo; and/or
 &lsquo;<samp>.debug_loclists</samp>&rsquo; sections.
+</p>
+</dd>
+<dt><code>O</code></dt>
+<dt><code>=str-offsets</code></dt>
+<dd><p>Displays the contents of the &lsquo;<samp>.debug_str_offsets</samp>&rsquo; section.
 </p>
 </dd>
 <dt><code>p</code></dt>
